@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "Create an A record set"
-        uses: BGarber42/route53-record-set@1.0.1
+        uses: BGarber42/route53-record-set@master
         with: 
           aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}

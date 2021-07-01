@@ -3,7 +3,7 @@ author: Brent Garber
 branding:
   icon: cloud
   color: gray-dark
-description: Sumit Route 53 Record Sets
+description: Submit Route 53 Record Sets
 inputs:
   aws_access_key_id:
     description: The AWS access key id
