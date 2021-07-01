@@ -4,6 +4,7 @@ This GitHub Actions allows you to manage [AWS Route 53](https://aws.amazon.com/r
 
 The naming is aligned with the official interface: https://docs.aws.amazon.com/cli/latest/reference/route53/change-resource-record-sets.html. There you can find possible variations for every Input this GitHub Action supports.
 
+Based on [Roosterfish/aws-route53-record-set-action](https://github.com/Roosterfish/aws-route53-record-set-action)
 ## Get started
 
 A new AWS Route 53 Record Set can be created with the following workflow syntax:
@@ -14,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "Create an A record set"
-        uses: Roosterfish/aws-route53-record-set-action@master
+        uses: BGarber42/route53-record-set@1.0.1
         with: 
           aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
