@@ -34,6 +34,7 @@ class AWSRoute53RecordSet:
         Creates a new client object which wraps the connection to AWS.
         """
         if not self.client:
+            boto3.set_stream_logger('')
             self.client = boto3.client(
                 "route53",
                 aws_access_key_id=self._get_env("INPUT_AWS_ACCESS_KEY_ID", exit=False),
