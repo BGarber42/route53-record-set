@@ -41,6 +41,8 @@ class AWSRoute53RecordSet:
                 aws_secret_access_key=self._get_env("INPUT_AWS_SECRET_ACCESS_KEY", exit=False)
             )
             print(boto3.session.Session.__dict__)
+            print(boto3.session.Session.profile_name)
+            print(boto3.session.Session.get_credentials())
             self.waiter = self.client.get_waiter("resource_record_sets_changed")
 
     def _set_comment(self):
