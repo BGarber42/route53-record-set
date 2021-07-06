@@ -38,9 +38,6 @@ class AWSRoute53RecordSet:
             self.client = boto3.client(
                 "route53"
             )
-            session = boto3.Session()
-            credentials = session.get_credentials()
-            print(credentials.__dict__)
             self.waiter = self.client.get_waiter("resource_record_sets_changed")
 
     def _set_comment(self):
