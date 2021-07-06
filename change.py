@@ -34,14 +34,13 @@ class AWSRoute53RecordSet:
         Creates a new client object which wraps the connection to AWS.
         """
         if not self.client:
-            boto3.set_stream_logger('')
             boto3.set_stream_logger('botocore', level='DEBUG')
-            print(boto3.session.__dict__)
             self.client = boto3.client(
                 "route53",
                 aws_access_key_id=self._get_env("INPUT_AWS_ACCESS_KEY_ID", exit=False),
                 aws_secret_access_key=self._get_env("INPUT_AWS_SECRET_ACCESS_KEY", exit=False)
             )
+            print(boto3.session.Session)
             self.waiter = self.client.get_waiter("resource_record_sets_changed")
 
     def _set_comment(self):
