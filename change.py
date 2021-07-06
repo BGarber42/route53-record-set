@@ -42,7 +42,7 @@ class AWSRoute53RecordSet:
             )
             session = boto3.Session()
             credentials = session.get_credentials()
-            print(credentials)
+            print(credentials.__dict__)
             self.waiter = self.client.get_waiter("resource_record_sets_changed")
 
     def _set_comment(self):
